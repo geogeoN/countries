@@ -41,6 +41,8 @@ body {
 }
 
 .wrapper {
+    min-width: 100vw;
+    min-height: 100vh;
     padding-bottom: 48px;
     background-color: var(--main-color);
     display: flex;
@@ -116,6 +118,7 @@ body {
     width: var(--search-field-width);
     height: var(--search-field-height);
     padding: 0 32px;
+    box-sizing: border-box; 
     display: flex;
     align-items: center;
     gap: var(--gap-24);
@@ -144,7 +147,7 @@ body {
 
 .header__filter_button {
     height: var(--search-field-height);
-    padding: 17px 24px;
+    padding: 18px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -240,4 +243,72 @@ body {
 
 .accent {
     font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 768px) {
+    .header__head-container {
+        width: 686px;
+    }
+    .header__title {
+        font-size: calc(var(--font-size-l) - 10px);
+        line-height: 20px;
+    }
+    .header__theme_icon {
+        width: 12px;
+        height: 12px;
+    }
+    .header__theme_icon .icon {
+        width: 100%;
+        aspect-ratio: 1;
+        vertical-align: top;
+    }
+    .header__theme_name {
+        font-size: calc(var(--font-size-s) - 4px);
+        line-height: 1.35;
+    }
+    .header__searchbar-container {
+        width: 688px;
+    }
+    .countries {
+        width: 600px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header {
+        gap: var(--gap-24);
+        height: 230px;
+    }
+    .header__head-container {
+        width: 343px;
+    }
+    .header__searchbar-container {
+        width: 343px;
+        flex-direction: column;
+        gap: var(--gap-48);
+    }
+    .header__search-field {
+        width: 100%;
+        height: 48px;
+    }
+    .header__search-field_text,
+    .header__filter_button,
+    .option {
+        font-size: 12px;
+        line-height: 1.35;
+
+    }
+    .header__filter {
+        height: 200px;
+    }
+    .header__filter_button {
+        padding-block: 0;
+        height: 48px;
+    }
+    .header__filter_list {
+        height: 112px;
+    }
+    .countries {
+        width: 265px;
+    }
 }
